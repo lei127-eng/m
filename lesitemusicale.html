@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Lecteur Vinyle</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#fc6bb4">
+
+</head>
+<body>
+
+  <video autoplay muted loop id="bg-video">
+    <source src="images/sailorvid.mp4" type="video/mp4">
+    Ton navigateur ne supporte pas la vidéo en fond.
+  </video>
+
+
+  <div class="container">
+ 
+    <div class="song-list">
+        <ul>
+        <li data-song="All Falls Down.mp3" data-title="All Falls Down-Kanye West" data-artist="Kanye West">All Falls Down-Kanye West</li>
+          <li data-song="Runaway.mp3" data-title="Runanaw-Kanye West" data-artist="Kanye West">Runanaw-Kanye West</li>
+          <li data-song="Monster.mp3" data-title="Monster-Kanye West" data-artist="Kanye West">Monster-Kanye West</li>
+          <li data-song="Flashing Lights.mp3" data-title="Monster-Kanye West" data-artist="Kanye West">Flashing Lights-Kanye West</li>
+          <li data-song="Stronger.mp3" data-title="Stronger-Kanye West" data-artist="Kanye West">Stronger-Kanye West</li>
+          <li data-song="Heartless.mp3" data-title="Heartless-Kanye West" data-artist="Kanye West">Heartless-Kanye West</li>
+          <li data-song="Through The Wire.mp3" data-title="Through The Wire-Kanye West" data-artist="Kanye West">Through The Wire-Kanye West</li>
+          <li data-song="I Wonder.mp3" data-title="I Wonder-Kanye West" data-artist="Kanye West">I wonder-Kanye West</li>
+          <li data-song="SWEET I THOUGHT YOU WANTED TO DANCE.mp3" data-title="SWEET/I THOUGHT YOU WANTED TO DANCE-Tyler The Creator" data-artist="Tyler The Creator">SWEET/I THOUGHT YOU WANTED TO DANCE-Tyler The Creator</li>
+          <li data-song="paid.mp3" data-title="paid-Kanye West" data-artist="Kanye West">paid-Kanye West</li>
+          <li data-song="Like Him.mp3" data-title="Like Him-The Creator" data-artist="Tyler The Creator">Like Him-Tyler The Creator</li>
+          <li data-song="Pink + White.mp3" data-title="Pink + White-Frank Ocean" data-artist="Frank Ocean">Pink + White-Frank Ocean</li>
+          <li data-song="Sao Paulo.mp3" data-title="Sao Paulo-The Weeknd" data-artist="The Weeknd">Sao Paulo-The Weeknd</li>
+          <li data-song="Paperwork.mp3" data-title="Paperwork- Kanye West" data-artist="Kanye West">Paperwork-Kanye West</li>
+          <li data-song="Do it.mp3" data-title="Do it- Kanye West" data-artist="Kanye West">Do it -Kanye West</li>
+          <li data-song="Hoodrat.mp3" data-title="Hoodrat-Kanye West" data-artist="Kanye West">Hoodrat -Kanye West</li>
+          <li data-song="Back to me.mp3" data-title="Back to me-Kanye West" data-artist="Kanye West">Back to me -Kanye West</li>
+          <li data-song="Keys to my life.mp3" data-title="Keys to my life-Kanye West" data-artist="Kanye West">Keys to my life -Kanye West</li>
+          <li data-song="Carnival.mp3" data-title="Carnival-Kanye West" data-artist="Kanye West">Carnival -Kanye West</li>
+          <li data-song="Stars.mp3" data-title="Stars-Kanye West" data-artist="Kanye West">Stars -Kanye West</li>
+          <li data-song="Good Morning.mp3" data-title="Good Morning-Kanye West" data-artist="Kanye West">Good Morning -Kanye West</li>
+          <li data-song="Wake me up.mp3" data-title="Wake me up-The Weeknd" data-artist="The Weeknd">Wake me up-The Weeknd</li>
+          <li data-song="Cry for me.mp3" data-title="Cry for me-The Weeknd" data-artist="The Weeknd">Cry for me-The Weeknd</li>
+          <li data-song="Baptized in fear.mp3" data-title="Baptized in fear-The Weeknd" data-artist="The Weeknd">Baptized in fear-The Weeknd</li>
+
+        </ul>
+      </div>
+  
+
+    <div class="player">
+      <img id="vinyl" src="images/jsp2.png" alt="Vinyle">
+
+      <div id="songInfo">
+        <p id="songTitle">Titre de la chanson</p>
+        <p id="songArtist">Nom de l'artiste</p>
+      </div>
+
+    
+
+      <div class="controls">
+        <button id="prev"><img src="images/back.png" alt="Précédent"></button>
+        <button id="playPause"><img id="playIcon" src="images/play.png" alt="Lecture"></button>
+        <button id="next"><img src="images/next.png" alt="Suivant"></button>
+      </div>
+
+
+      <div id="volumeControl">
+        <img src="images/volume down.png" id="volumeDown" alt="Volume Bas">
+        <img src="images/volume up.png" id="volumeUp" alt="Volume Haut">
+        <img src="images/mute.png" id="volumeMute" alt="Volume Muet">
+      </div>
+    </div>
+
+
+      <input type="range" id="progressBar" value="0" step="1">
+
+
+
+
+
+
+
+
+
+      <!-- Audio -->
+      <audio id="audio" src="All Falls Down.mp3" autoplay></audio>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('✅ Service Worker enregistré !'))
+        .catch(err => console.error('❌ Erreur SW:', err));
+    }
+  </script>
+  
+</body>
+</html>
