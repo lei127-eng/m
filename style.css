@@ -208,8 +208,8 @@ body {
 
 
 
-  /* Audio caché pour contrôler la musique en JS */
   audio {
     display: none;
   }
+
   
